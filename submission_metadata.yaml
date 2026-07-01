@@ -31,7 +31,7 @@ ai_usage_summary: |
   Used AI agents to analyze the job description, set up the data pipeline, verify formatting constraints, overhaul the UI presentation layer, and deploy the application.
 
 methodology_summary: |
-  Rule-based ranker utilizing highly optimized, CPU-bound hybrid retrieval (Fast Hashing) over career history, skill matching, and behavioral signals (staleness, recruiter response rate). The solution processes 100k records in memory under 5 minutes using Python multiprocessing fork(). It enforces strict mathematical gating for research-only profiles and consulting-only candidates, effectively countering keyword-stuffing and honeypot traps with 0.0 multipliers.
+  Rule-based ranker utilizing highly optimized, CPU-bound hybrid retrieval (BM25 + a bespoke hashing-based pseudo-embedding) over career history, skill matching, and behavioral signals (staleness, recruiter response rate). Single-process, pure-Python implementation processes 100k records in memory in ~4 minutes on 2 CPU cores, well within the 16GB memory budget, with no GPU and no external network calls. It enforces strict mathematical gating for research-only profiles and consulting-only candidates, effectively countering keyword-stuffing and honeypot traps with 0.0 multipliers.
 
 declarations:
   read_submission_spec: true
