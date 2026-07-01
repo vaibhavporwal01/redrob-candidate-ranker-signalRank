@@ -1,0 +1,12 @@
+candidate_id,relevance,is_honeypot,review_note
+RR-5107,3,0,Founding engineer with shipped hybrid retrieval and evaluation
+RR-1842,3,0,Hidden gem backend title with scaled FAISS search evidence
+RR-0931,3,0,Strong production embeddings reranking and NDCG
+RR-7714,3,0,Hidden gem with shipped embedding search and API depth
+RR-2230,2,0,Excellent search ranking evidence but larger-company profile
+RR-3148,2,0,Strong recommendation depth but above target experience and long notice
+RR-1580,1,0,Relevant platform evidence but severe availability risk
+RR-8890,0,1,Impossible timeline and expert skills with zero duration
+RR-4021,0,0,Research-only computer vision with no NLP or IR
+RR-6002,0,0,Consulting-only recent wrapper experience
+

@@ -1,0 +1,59 @@
+{
+  "retrieval": {
+    "candidate_pool_size": 1000,
+    "bm25_weight": 0.62,
+    "dense_weight": 0.38,
+    "rrf_k": 60,
+    "hash_dimensions": 384
+  },
+  "skills": {
+    "career_evidence_weight": 0.72,
+    "listed_skill_weight": 0.28,
+    "production_boost": 1.18,
+    "duration_full_credit_months": 24,
+    "expert_zero_duration_penalty": 0.75
+  },
+  "career": {
+    "min_years": 5,
+    "max_years": 9,
+    "experience_tolerance_years": 3,
+    "short_tenure_months": 20,
+    "recent_code_months": 18,
+    "small_company_max_size": 200,
+    "quick_notice_days": 30,
+    "long_notice_days": 90
+  },
+  "behavioral": {
+    "stale_days": 150,
+    "very_stale_days": 365,
+    "low_response_rate": 0.15,
+    "healthy_response_rate": 0.45,
+    "severe_multiplier": 0.1,
+    "stale_multiplier": 0.25,
+    "floor": 0.32,
+    "ceiling": 1.05
+  },
+  "honeypot": {
+    "max_reasonable_experience_years": 45,
+    "max_skill_duration_months": 480,
+    "max_role_duration_months": 360,
+    "max_concurrent_roles": 3,
+    "severe_multiplier": 0.0,
+    "moderate_multiplier": 0.25,
+    "minor_multiplier": 0.62
+  },
+  "final": {
+    "retrieval_relevance": 0.16,
+    "skill_match": 0.22,
+    "hidden_gem": 0.17,
+    "shipper": 0.17,
+    "production": 0.13,
+    "experience_fit": 0.07,
+    "location_notice": 0.05,
+    "career_quality": 0.03,
+    "hard_gate_multiplier": 0.0,
+    "soft_gate_multiplier": 0.42,
+    "score_scale": 100.0
+  }
+}
+

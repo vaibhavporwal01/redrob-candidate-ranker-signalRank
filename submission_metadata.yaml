@@ -1,0 +1,41 @@
+team_name: "oopsWeCode"
+primary_contact:
+  name: "Vaibhav Porwal"
+  email: "vaibhavporwal135@gmail.com"
+  phone: "9351763848"
+team_members:
+  - name: "Vaibhav Porwal"
+    email: "vaibhavporwal135@gmail.com"
+    role: "AI Engineer"
+
+github_repo: "https://huggingface.co/spaces/vaibhavporwal01/redrob-candidate-ranker/tree/main"
+sandbox_link: "https://huggingface.co/spaces/vaibhavporwal01/redrob-candidate-ranker"
+reproduce_command: "python rank.py --candidates ./data/candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Hugging Face Spaces (Docker)"
+  cpu_cores: 2
+  ram_gb: 16
+  python_version: "3.12"
+  os: "Linux"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+  - "Gemini"
+
+ai_usage_summary: |
+  Used AI agents to analyze the job description, set up the data pipeline, verify formatting constraints, overhaul the UI presentation layer, and deploy the application.
+
+methodology_summary: |
+  Rule-based ranker utilizing highly optimized, CPU-bound hybrid retrieval (Fast Hashing) over career history, skill matching, and behavioral signals (staleness, recruiter response rate). The solution processes 100k records in memory under 5 minutes using Python multiprocessing fork(). It enforces strict mathematical gating for research-only profiles and consulting-only candidates, effectively countering keyword-stuffing and honeypot traps with 0.0 multipliers.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

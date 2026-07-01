@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate",
+  "type": "object",
+  "required": ["candidate_id"],
+  "properties": {
+    "candidate_id": {"type": ["string", "integer"]},
+    "profile": {"type": "object", "additionalProperties": true},
+    "career_history": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "education": {"type": "array"},
+    "skills": {"type": "array"},
+    "certifications": {"type": "array"},
+    "languages": {"type": "array"},
+    "redrob_signals": {"type": "object", "additionalProperties": true}
+  },
+  "additionalProperties": true
+}

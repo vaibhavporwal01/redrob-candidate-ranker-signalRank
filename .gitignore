@@ -1,0 +1,25 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large dataset — organizer-provided, not ours to redistribute
+data/candidates.jsonl
+data/candidates.jsonl.gz
+
+# Local scratch
+artifacts/*
+!artifacts/.gitkeep
+work/deps/
+*.log

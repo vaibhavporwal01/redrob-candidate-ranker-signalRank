@@ -1,0 +1,41 @@
+{
+  "job": {
+    "title": "Senior AI Engineer, Founding Team",
+    "company": "Redrob AI",
+    "locations": ["Pune", "Noida"],
+    "preferred_locations": ["Pune", "Noida", "Hyderabad", "Mumbai", "Delhi", "Gurgaon", "Gurugram", "NCR", "Bengaluru", "Bangalore"],
+    "country": "India",
+    "min_years": 5,
+    "max_years": 9,
+    "summary": "Founding-team engineer who has shipped production retrieval, ranking, recommendation, search, or embedding systems and moves quickly from ambiguous problem to reliable product."
+  },
+  "skill_groups": {
+    "retrieval": ["retrieval", "information retrieval", "semantic search", "hybrid search", "search engine"],
+    "embeddings": ["embedding", "embeddings", "sentence transformer", "vector representation"],
+    "ranking": ["ranking", "reranking", "re-ranking", "learning to rank", "ltr"],
+    "recommendation": ["recommendation", "recommender", "personalization", "collaborative filtering"],
+    "vector_databases": ["faiss", "pinecone", "weaviate", "milvus", "qdrant", "vector database", "vector db"],
+    "evaluation": ["ndcg", "mean average precision", "precision@", "recall@", "offline evaluation", "a/b test", "ab test"],
+    "ml_platform": ["mlflow", "model serving", "feature store", "mlops", "model monitoring"],
+    "python": ["python", "pytorch", "scikit-learn", "sklearn"]
+  },
+  "signals": {
+    "production": ["deployed", "production", "launched", "shipped", "served", "scaled", "real-time", "realtime", "latency", "uptime", "on-call", "million users", "customers"],
+    "shipper": ["mvp", "v1", "v2", "prototype to production", "zero to one", "0 to 1", "launched", "shipped", "iterated", "built end-to-end", "owned end-to-end"],
+    "research": ["published", "paper", "conference", "research lab", "thesis", "investigated", "explored", "state of the art research"],
+    "recent_wrapper": ["langchain", "openai api", "prompt engineering", "llm wrapper", "chatbot"],
+    "nlp_ir": ["nlp", "natural language", "retrieval", "search", "ranking", "recommendation", "embedding", "language model", "text"],
+    "other_modalities": ["computer vision", "image segmentation", "object detection", "speech recognition", "robotics", "slam", "lidar"]
+  },
+  "company_rules": {
+    "consultancies": ["tcs", "tata consultancy services", "infosys", "wipro", "accenture", "cognizant", "capgemini"],
+    "research_employers": ["research lab", "university", "institute", "academia"]
+  },
+  "title_rules": {
+    "engineering": ["engineer", "developer", "scientist", "architect", "technical lead", "tech lead"],
+    "senior": ["senior", "staff", "principal", "lead", "architect"],
+    "leadership_only": ["director", "vp", "vice president", "head of", "chief"],
+    "non_technical": ["marketing", "sales", "recruiter", "human resources", "finance", "account manager"]
+  }
+}
+
