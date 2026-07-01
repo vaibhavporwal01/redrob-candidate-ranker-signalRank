@@ -8,14 +8,16 @@ from typing import Iterable
 
 from ..normalization import tokens
 
-_CHUNK_STATE: dict = {}
+_STATE: dict = {}
+_DOCS: list[list[str]] = []
 
 
-def _score_one(doc: list[str]) -> float:
-    query_terms = _CHUNK_STATE["query_terms"]
-    document_frequency = _CHUNK_STATE["document_frequency"]
-    num_docs = _CHUNK_STATE["num_docs"]
-    average_length = _CHUNK_STATE["average_length"]
+def _score_by_index(index: int) -> float:
+    doc = _DOCS[index]
+    query_terms = _STATE["query_terms"]
+    document_frequency = _STATE["document_frequency"]
+    num_docs = _STATE["num_docs"]
+    average_length = _STATE["average_length"]
     frequencies = Counter(doc)
     score = 0.0
     for term in query_terms:
@@ -29,13 +31,14 @@ def _score_one(doc: list[str]) -> float:
 
 
 def _init_worker(query_terms: set[str], document_frequency: Counter, num_docs: int, average_length: float) -> None:
-    _CHUNK_STATE["query_terms"] = query_terms
-    _CHUNK_STATE["document_frequency"] = document_frequency
-    _CHUNK_STATE["num_docs"] = num_docs
-    _CHUNK_STATE["average_length"] = average_length
+    _STATE["query_terms"] = query_terms
+    _STATE["document_frequency"] = document_frequency
+    _STATE["num_docs"] = num_docs
+    _STATE["average_length"] = average_length
 
 
 def score_corpus(tokenized_docs: list[list[str]], query: str, workers: int | None = None) -> list[float]:
+    global _DOCS
     if not tokenized_docs:
         return []
     query_terms = set(tokens(query))
@@ -47,13 +50,17 @@ def score_corpus(tokenized_docs: list[list[str]], query: str, workers: int | Non
 
     worker_count = workers or os.cpu_count() or 1
     if worker_count <= 1 or num_docs < 2000:
+        _DOCS = tokenized_docs
         _init_worker(query_terms, document_frequency, num_docs, average_length)
-        return [_score_one(doc) for doc in tokenized_docs]
+        return [_score_by_index(i) for i in range(num_docs)]
 
+    # Assign to the module-level global BEFORE forking workers, so children
+    # inherit it via copy-on-write memory instead of pickling it through pipes.
+    _DOCS = tokenized_docs
     chunk_size = max(1, num_docs // (worker_count * 4))
     with Pool(
         processes=worker_count,
         initializer=_init_worker,
         initargs=(query_terms, document_frequency, num_docs, average_length),
     ) as pool:
-        return pool.map(_score_one, tokenized_docs, chunksize=chunk_size)
+        return pool.map(_score_by_index, range(num_docs), chunksize=chunk_size)
