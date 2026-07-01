@@ -8,8 +8,8 @@ team_members:
     email: "vaibhavporwal135@gmail.com"
     role: "AI Engineer"
 
-github_repo: "https://huggingface.co/spaces/vaibhavporwal01/redrob-candidate-ranker/tree/main"
-sandbox_link: "https://huggingface.co/spaces/vaibhavporwal01/redrob-candidate-ranker"
+github_repo: "https://github.com/vaibhavporwal01/redrob-candidate-ranker-signalRank"
+sandbox_link: "https://vaibhavporwal01-redrob-candidate-ranker.hf.space/"
 reproduce_command: "python rank.py --candidates ./data/candidates.jsonl --out ./submission.csv"
 
 compute:
